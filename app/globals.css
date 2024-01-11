@@ -83,6 +83,38 @@ prose-ol:text-dark-500;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+/* MY THIN SCROLLBAR */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 2px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: #4a5568;
+  border-radius: 5px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-radius: 3px;
+}
+
+/* For Firefox */
+.scrollbar-thin {
+  scrollbar-width: thin;
+}
+
+.scrollbar-thin::-moz-scrollbar-thumb {
+  background-color: #4a5568;
+  border-radius: 3px;
+}
+
+.scrollbar-thin::-moz-scrollbar-track {
+  background-color: #cbd5e0;
+  border-radius: 3px;
+}
+
+/* My thin scrollbar ends */
+
 .custom-scrollbar::-webkit-scrollbar {
   width: 3px;
   height: 3px;
