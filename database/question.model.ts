@@ -24,6 +24,6 @@ const QuestionSchema = new Schema({
   createdAt: { type: Date, default: Date.now },
 });
 
-const Questions = models.Question || model("Question", QuestionSchema);
+const Question = models.questions || model("questions", QuestionSchema);
 
-export default Questions;
+export default Question;
