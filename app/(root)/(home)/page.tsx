@@ -5,96 +5,12 @@ import Filter from "@/components/shared/Filter";
 import LocalSearchbar from "@/components/shared/search/LocalSearch";
 import { Button } from "@/components/ui/button";
 import { HomePageFilters } from "@/constants/filters";
+import { getQuestions } from "@/lib/actions/question.action";
 import Link from "next/link";
 
-const questions = [
-  {
-    _id: 1,
-    title: "Cascading Deletes in SQLAlchemy?",
-    tags: [
-      { _id: 1, name: "python" },
-      { _id: 2, name: "sql" },
-    ],
-    author: {
-      _id: 123,
-      name: "John Doe",
-      picture: "john-doe.jpg",
-    },
-    upvotes: 1124,
-    views: 1124325,
-    answers: [
-      {
-        _id: 1,
-        text: "You can use the cascade option in SQLAlchemy.",
-        author: "Jane Smith",
-      },
-      {
-        _id: 2,
-        text: "Here is an example of cascading deletes.",
-        author: "Bob Johnson",
-      },
-    ],
-    createdAt: new Date(Math.random() * new Date().getTime()),
-  },
-  {
-    _id: 2,
-    title: "How to center a div?",
-    tags: [
-      { _id: 3, name: "css" },
-      { _id: 4, name: "web" },
-    ],
-    author: {
-      _id: 456,
-      name: "Alice Johnson",
-      picture: "alice-johnson.jpg",
-    },
-    upvotes: 15,
-    views: 120,
-    answers: [
-      {
-        _id: 1,
-        text: "You can use 'margin: auto' to center a div.",
-        author: "Bob Smith",
-      },
-      {
-        _id: 2,
-        text: "Flexbox is also a great way to center elements.",
-        author: "Charlie Brown",
-      },
-    ],
-    createdAt: new Date(Math.random() * new Date().getTime()),
-  },
-  {
-    _id: 3,
-    title: "What is 'use client'?",
-    tags: [
-      { _id: 5, name: "next" },
-      { _id: 6, name: "web" },
-    ],
-    author: {
-      _id: 789,
-      name: "Eve Miller",
-      picture: "eve-miller.jpg",
-    },
-    upvotes: 8,
-    views: 80,
-    answers: [
-      {
-        _id: 1,
-        text: "'use client' is a hook in Next.js for data fetching.",
-        author: "David Wilson",
-      },
-      {
-        _id: 2,
-        text: "Here is how you can use 'use client' in your Next.js project.",
-        author: "Grace Thompson",
-      },
-    ],
-    createdAt: new Date(Math.random() * new Date().getTime()),
-  },
-];
+export default async function Home() {
+  const result = await getQuestions({});
 
-export default function Home() {
   return (
     <>
       <div className="flex w-full flex-col-reverse justify-between gap-4 sm:flex-row sm:items-center">
@@ -125,8 +41,8 @@ export default function Home() {
       <HomeFilters />
 
       <div className="mt-10 flex w-full flex-col gap-6">
-        {questions.length > 0 ? (
-          questions.map((question) => (
+        {result.questions.length > 0 ? (
+          result.questions.map((question) => (
             <QuestionCard
               key={question._id}
               _id={question._id}
