@@ -14,7 +14,7 @@ export default authMiddleware({
     "commiunity",
     "/jobs",
   ],
-  ignoredRoutes: ["/api/webhooks(.*)", "/api/chatpgt"],
+  ignoredRoutes: ["/api/chatpgt"],
 });
 
 export const config = {
