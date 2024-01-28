@@ -30,6 +30,7 @@ export async function createUser(userData: CreateUserParams) {
   try {
     connectToDatabase();
 
+    // ! Error is occuring here
     const newUser = await User.create({ userData });
     console.log(newUser);
 
