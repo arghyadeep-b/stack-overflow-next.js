@@ -61,7 +61,7 @@ export async function POST(req: Request) {
     console.log("clerkid:", id);
 
     //   Create a new user in your database
-    const mongoUser = createUser({
+    const mongoUser = await createUser({
       clerkId: id,
       name: `${first_name}${last_name ? ` ${last_name}` : ""}`,
       username: username!,
@@ -77,7 +77,7 @@ export async function POST(req: Request) {
       evt.data;
 
     //   Update user in your database
-    const mongoUser = updateUser({
+    const mongoUser = await updateUser({
       clerkId: id,
       updateData: {
         name: `${first_name}${last_name ? ` ${last_name}` : ""}`,
