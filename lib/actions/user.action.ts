@@ -3,7 +3,7 @@
 import User from "@/database/user.model";
 import { connectToDatabase } from "../mongoose";
 import {
-  CreateUserParams,
+  // CreateUserParams,
   DeleteUserParams,
   GetUserByIdParams,
   UpdateUserParams,
@@ -26,7 +26,7 @@ export async function getUserById(params: GetUserByIdParams) {
   }
 }
 
-export async function createUser(userData: CreateUserParams) {
+export async function createUser(userData: any) {
   try {
     connectToDatabase();
     console.log("check");
