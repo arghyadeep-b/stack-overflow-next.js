@@ -30,13 +30,25 @@ export async function createUser(userData: CreateUserParams) {
   try {
     connectToDatabase();
 
+    console.log("check");
+
     console.log("userdata:", userData);
 
     // ! Error is occuring here
-    const newUser = await User.create({ userData });
-    console.log(newUser);
+    // const newUser = await User.create({ userData });
+    // console.log(newUser);
 
-    return newUser;
+    const anotherUser = await User.create({
+      clerkId: "789012",
+      name: "Another Dummy User",
+      username: "anotherdummyuser",
+      email: "anotherdummyuser@example.com",
+      picture: "https://example.com/anotherdummy.jpg",
+    });
+
+    console.log("Another user created:", anotherUser);
+
+    return anotherUser;
   } catch (error) {
     console.log(error);
     throw error;
