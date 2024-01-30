@@ -29,6 +29,8 @@ export async function getUserById(params: GetUserByIdParams) {
 export async function createUser(userData: CreateUserParams) {
   try {
     connectToDatabase();
+    console.log("check");
+    console.log("data:", userData);
 
     const newUser = await User.create({ userData });
     console.log(newUser);
