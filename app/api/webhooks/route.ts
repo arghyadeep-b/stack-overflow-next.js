@@ -55,18 +55,20 @@ export async function POST(req: Request) {
   console.log(eventType);
 
   if (eventType === "user.created") {
-    const { id, email_addresses, image_url, username, first_name, last_name } =
-      evt.data;
+    // const { id, email_addresses, image_url, username, first_name, last_name } =
+    //   evt.data;
 
     console.log("data:", evt.data);
 
     //   Create a new user in your database
     const mongoUser = await createUser({
-      clerkId: id,
-      name: `${first_name}${last_name ? ` ${last_name}` : ""}`,
-      username: username!,
-      email: email_addresses[0].email_address,
-      picture: image_url,
+      clerkId: evt.data.id,
+      name: `${evt.data.first_name}${
+        evt.data.last_name ? ` ${evt.data.last_name}` : ""
+      }`,
+      username: evt.data.username!,
+      email: evt.data.email_addresses[0].email_address,
+      picture: evt.data.image_url,
     });
 
     return NextResponse.json({ message: "OK", user: mongoUser });
