@@ -3,23 +3,23 @@ import Link from "next/link";
 import RenderTag from "../RenderTag";
 
 const hotQuestions = [
-  { _id: 1, title: "How do I use express as a custom server in NextJS?" },
-  { _id: 2, title: "Is it only me or the font is bolder than necessary?" },
-  { _id: 3, title: "Can I get the course for free?" },
+  { _id: "1", title: "How do I use express as a custom server in NextJS?" },
+  { _id: "2", title: "Is it only me or the font is bolder than necessary?" },
+  { _id: "3", title: "Can I get the course for free?" },
   {
-    _id: 4,
+    _id: "4",
     title:
       "Best practices for data fetching in a Next.js application with Server-Side Rendering (SSR)?",
   },
-  { _id: 5, title: "Cascading Deletes in SQLAlchemy?" },
+  { _id: "5", title: "Cascading Deletes in SQLAlchemy?" },
 ];
 
 const popularTags = [
-  { _id: 1, name: "javascript", totalQuestions: 5 },
-  { _id: 2, name: "react", totalQuestions: 2 },
-  { _id: 3, name: "next", totalQuestions: 7 },
-  { _id: 4, name: "vue", totalQuestions: 4 },
-  { _id: 5, name: "redex", totalQuestions: 10 },
+  { _id: "1", name: "javascript", totalQuestions: 5 },
+  { _id: "2", name: "react", totalQuestions: 2 },
+  { _id: "3", name: "next", totalQuestions: 7 },
+  { _id: "4", name: "vue", totalQuestions: 4 },
+  { _id: "5", name: "redex", totalQuestions: 10 },
 ];
 
 const RightSidebar = () => {
