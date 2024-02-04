@@ -30,7 +30,7 @@ export async function createUser(userData: CreateUserParams) {
   try {
     connectToDatabase();
 
-    const newUser = await User.create({ userData });
+    const newUser = await User.create(userData);
     console.log(newUser);
 
     return newUser;
